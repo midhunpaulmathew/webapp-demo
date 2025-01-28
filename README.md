@@ -156,5 +156,20 @@ we use an nginx deployment to deploy a static webpage in the kubernetes and acce
 
 1. ```cd ../webapp/```
 2. use ```kubectl apply -f <file-name>``` to create the *namespace*, *configmap*, *deployment* and *services*
-3. ```kubectl get all -n <namespace>`` to verify the *deployment* and *services*
+3. ```kubectl get all -n <namespace>``` to verify the *deployment* and *services*
 4. get the *loadbalancer* DNS from the console to access your static webpage.
+
+## Optional: Using a Custom Dockerfile
+
+in the above deployment, we used the official nginx image. if we want to use a custom docker image, we can build and push one to our registry and make use of it in the deployment templates.
+
+to build and push a custom docker image, follow the below steps.
+
+1. ```cd ~/webapp-demo/docker/```
+2. ```docker build -t <your-dockerhub-username>/<image-name>:<tag> .```
+3. ```docker login```
+4. ```docker push <your-dockerhub-username>/<image-name>:<tag>```
+5. edit the deployment yaml in *webapp-demo/webapp/* to make use of the above image
+6. apply the new deployment template
+
+> you may need to remove the configmap object and its references from the deployment template also, as the custom image contains the application code embedded.
