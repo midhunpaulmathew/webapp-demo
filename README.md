@@ -2,7 +2,7 @@
 a demo webapp deployed in kubernetes
 
 
-## install dependencies
+## Install Dependencies
 
 follow the below steps to configure your local machine with dependencies
 
@@ -32,7 +32,7 @@ follow the below steps to configure your local machine with dependencies
 4. ```sudo mv terraform /usr/local/bin/```
 5. ```terraform --version```
 
-## configure awscli
+## Configure awscli
 
 follow the below steps to configure awscli on your local machine
 
@@ -40,14 +40,14 @@ follow the below steps to configure awscli on your local machine
 2. ```aws configure```
 3. ```aws sts get-caller-identity```
 
-## clone the repository
+## Clone the Repository
 
 clone this repository to a convinient path in your local machine
 
 1. ```git clone https://github.com/midhunpaulmathew/webapp-demo.git```
 2. ```cd webapp-demo```
 
-## review terraform configurations
+## Review Terraform Configurations
 
 check and modify the terraform files for your setup
 
@@ -57,7 +57,7 @@ check and modify the terraform files for your setup
 4. *vpc.tf* contains *cluster name*, *subnet CIDRs*
 5. *sg.tf* contains security group rules specific to worker nodes
 
-## provisioning the infrastructure
+## Provisioning the Infrastructure
 
 follow below steps to provision the infrastructure in your aws account
 
@@ -67,7 +67,7 @@ follow below steps to provision the infrastructure in your aws account
 
 >wait for the resources to be get allocated and active
 
-## accessing the kubernetes api
+## Accessing the Kubernetes API
 
 once the resources are up and active, follow the below steps to access the cluster from your local machine
 
@@ -75,7 +75,7 @@ once the resources are up and active, follow the below steps to access the clust
 2. ```kubectl cluster-info```
 3. ```kubectl get nodes```
 
-## setup aws loadbalancer controller
+## Setup aws Loadbalancer Controller
 
 to access the services to a public frontend, install a cluster add-on. follow the below steps.
 > 1. make sure to replace placeholders inside <> with your account specific values \
@@ -145,7 +145,7 @@ EOF`
 
 > verify your load balancer controller deployment.
 
-## setup web application
+## Setup Web Application
 
 
 we use an nginx deployment to deploy a static webpage in the kubernetes and access it using the loadbalancer service
