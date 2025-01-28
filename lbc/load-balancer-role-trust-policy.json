@@ -4,7 +4,7 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "Federated": "arn:aws:iam::<your-account-id>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/<OIDC-id>"
+                "Federated": "arn:aws:iam::<your-account-id>:oidc-provider/oidc.eks.<cluster-region>.amazonaws.com/id/<OIDC-id>"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
