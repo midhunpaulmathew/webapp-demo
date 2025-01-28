@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-files
+  namespace: webapp-demo
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Demo Static Webapp</title>
+    </head>
+    <body>
+        <h1>Welcome to the Demo Static Website</h1>
+        <p>This website is running on NGINX in Kubernetes.</p>
+    </body>
+    </html>
+
