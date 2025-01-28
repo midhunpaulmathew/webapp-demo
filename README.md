@@ -97,13 +97,13 @@ to access the services to a public frontend, install a cluster add-on. follow th
         {
             "Effect": "Allow",
             "Principal": {
-                "Federated": "arn:aws:iam::122657024312:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/91FF4E14E1D04049694EEBB1FCC808D2"
+                "Federated": "arn:aws:iam::<your-account-id>:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/<oidc-id>>"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
                 "StringEquals": {
-                    "oidc.eks.region-code.amazonaws.com/id/91FF4E14E1D04049694EEBB1FCC808D2:aud": "sts.amazonaws.com",
-                    "oidc.eks.region-code.amazonaws.com/id/91FF4E14E1D04049694EEBB1FCC808D2:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
+                    "oidc.eks.region-code.amazonaws.com/id/<oidc-id>:aud": "sts.amazonaws.com",
+                    "oidc.eks.region-code.amazonaws.com/id/<oidc-id>:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
                 }
             }
         }
